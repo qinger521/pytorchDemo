@@ -36,3 +36,15 @@ print(y)
 
 # pytorch支持标准的numpy的索引操作
 print(x[:,1])
+
+# 改变大小：使用torch.view() 可以改变一个tensor的大小或形状
+x = torch.randn(4,4)
+y = x.view(16)
+z = x.view(-1,8) # -1表示通过其他维度进行推算
+print(y)
+print(x.size(),y.size(),z.size())
+
+# 如果又一个元素tensor，使用item()来获取这个value
+x = torch.randn(1)
+print(x)
+print(x.item())
